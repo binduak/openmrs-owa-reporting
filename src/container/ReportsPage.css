@@ -1,0 +1,16 @@
+.breadcrumb-wrap {
+    position: fixed;
+    top: 52px;
+    z-index: 9;
+    background: #fafafa;
+    width: 100%;
+    left: 0;
+    box-shadow: 0 1px 8px #666;
+    border-bottom: 1px #669999 solid;
+}
+.breadcrumb-wrap .page-title h1 {
+    margin:0;
+    font-size: 17px;
+    color:#000;
+    padding: 9px 0;
+}

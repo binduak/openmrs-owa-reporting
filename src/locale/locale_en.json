@@ -1,0 +1,11 @@
+{
+  "REPORTS_NAME_HEADER_KEY":"Name",
+  "REPORTS_START_DATE_HEADER_KEY": "Start Date",
+  "REPORTS_END_DATE_HEADER_KEY": "End Date",
+  "REPORT_FORMAT_KEY": "Format",
+  "RUN_NOW_BUTTON_KEY": "Run Now",
+  "REPORTS_TITLE_KEY":"Reports",
+  "REPORT_DOWNLOAD" : "Download",
+  "REPORTS_HEADER_REPORTS" : "Reports",
+  "CHOOSE_REPORT_FORMAT": "Choose Format"
+}

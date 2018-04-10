@@ -1,0 +1,77 @@
+.header-wrap {
+  background: #669999;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  padding: 0 10px;
+  height: 52px;
+}
+
+.header{
+  background-color: #699;
+  height: 50px;
+  width: 5000px;
+}
+
+.headerText {
+  text-align: left;
+  margin: 0px;
+  color: #FFF;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  margin: 6px 6px 0 0;
+  border-left: 0;
+  float: left;
+  font-size: 16px;
+  border-radius: 3px;
+  font-family: OpenSans,Arial;
+}
+
+a.back-btn {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  z-index: 1;
+  margin: 6px 6px 0 0;
+  color: #FFF;
+  border-left: 0;
+  float: left;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+a.back-btn:hover {
+  text-decoration: none;
+  color: #FFF;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0.2em;
+  /* sprites.less reset */
+  /* stylelint-disable */
+  display: inline;
+  /* stylelint-enable */
+  width: 100%;
+  height: auto;
+  line-height: normal;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0 0;
+  background-repeat: repeat;
+  margin-top: 0;
+}
+
+.fa.fa-home::before {
+  content: "\f015";
+}

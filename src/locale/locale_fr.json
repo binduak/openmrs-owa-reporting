@@ -1,0 +1,11 @@
+{
+  "REPORTS_NAME_HEADER_KEY":"Namefr",
+  "REPORTS_START_DATE_HEADER_KEY": "Start Datefr",
+  "REPORTS_END_DATE_HEADER_KEY": "End Datefr",
+  "REPORT_FORMAT_KEY": "Formatfr",
+  "RUN_NOW_BUTTON_KEY": "Run Nowfr",
+  "REPORTS_TITLE_KEY":"Reportsfr",
+  "REPORT_DOWNLOAD" : "Downloadfr",
+  "REPORTS_HEADER_REPORTS" : "Reportsfr",
+  "CHOOSE_REPORT_FORMAT": "Choose Formatfr"
+}
