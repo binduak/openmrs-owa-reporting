@@ -6,6 +6,7 @@ import ReportList from "../component/ReportList";
 import PropTypes from 'prop-types';
 import {Alert, Col} from "react-bootstrap";
 import { debounce } from 'lodash';
+import 'font-awesome/css/font-awesome.css';
 
 class ReportsPage extends Component {
     constructor() {

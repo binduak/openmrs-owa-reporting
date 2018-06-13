@@ -3,8 +3,6 @@ import {fromJS} from "immutable";
 import { loadTranslations, setLocale } from 'react-redux-i18n';
 import en from '../locale/locale_en.json';
 import fr from '../locale/locale_fr.json';
-// import 'rxjs/add/operator/switchMap';
-// import 'rxjs';
 
 const REPORT_FETCH_PENDING = 'REPORT_FETCH_PENDING';
 const REPORT_FETCH_SUCCESS = 'REPORT_FETCH_SUCCESS';
@@ -34,7 +32,7 @@ const setAppLanguage = (dispatch, selectedLanguage, translationsJson) => {
 
 const onChangeLanguage = (selectedLanguage) => {
     return (dispatch) => {
-            setAppLanguage(dispatch, selectedLanguage, fr);
+            setAppLanguage(dispatch, selectedLanguage, en);
         }
     };
 
@@ -97,7 +95,7 @@ const changeData = (index, columnName, value) => {
 };
 
 const getReportDefinitionCall = async () => {
-    const response = await fetch(`https://192.168.33.11/openmrs/ws/rest/v1/reportingrest/reportDefinition`,
+    const response = await fetch(`/openmrs/ws/rest/v1/reportingrest/reportDefinition`,
         {
             method: 'GET',
             credentials: 'include'
@@ -123,7 +121,7 @@ const createReportRequestCall = async (uuid, startDate, endDate, format) => {
         "renderingMode": format
     };
 
-    const response = await fetch(`https://192.168.33.11/openmrs/ws/rest/v1/reportingrest/reportRequest`, {
+    const response = await fetch(`/openmrs/ws/rest/v1/reportingrest/reportRequest`, {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -140,7 +138,7 @@ const createReportRequestCall = async (uuid, startDate, endDate, format) => {
 };
 
 const getReportRequestCall = async (reportRequestUuid) => {
-    const response = await fetch(`https://192.168.33.11/openmrs/ws/rest/v1/reportingrest/reportRequest/${reportRequestUuid}`,
+    const response = await fetch(`/openmrs/ws/rest/v1/reportingrest/reportRequest/${reportRequestUuid}`,
         {
             method: 'GET',
             credentials: 'include',
@@ -152,7 +150,7 @@ const getReportRequestCall = async (reportRequestUuid) => {
 
 const downloadReport = (uuid) => {
     return (dispatch) => {
-        fetch(`https://192.168.33.11/openmrs/module/reporting/reports/viewReport.form?uuid=${uuid}`,
+        fetch(`/openmrs/module/reporting/reports/viewReport.form?uuid=${uuid}`,
             {
                 method: 'GET',
                 credentials: 'include'

@@ -5,7 +5,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "css-loader": "^0.28.9",
-    "font-awesome-webpack": "^0.0.5-beta.2",
+    "font-awesome": "^4.7.0",
     "immutable": "^3.8.2",
     "jquery": "^3.2.1",
     "moment": "^2.20.1",
@@ -40,6 +40,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "homepage": "./",
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
