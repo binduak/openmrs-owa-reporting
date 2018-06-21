@@ -143,7 +143,7 @@ const getReportRequestCall = async (reportRequestUuid) => {
     return data;
 };
 
-const fileDownload = async (uuid) => {
+const downloadFile = async (uuid) => {
     const response = await fetch(`/openmrs/module/reporting/reports/viewReport.form?uuid=${uuid}`,{
         method: 'GET',
         credentials: 'include'
@@ -156,7 +156,7 @@ const fileDownload = async (uuid) => {
 
 const downloadReport = (uuid) => {
     return (dispatch) =>  {
-        fileDownload(uuid).then(
+        downloadFile(uuid).then(
             dispatch({type: '', data: {}})
         );
     }
