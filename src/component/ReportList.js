@@ -61,7 +61,7 @@ export default class ReportList extends Component {
                 <option value="-1">Choose Format</option>
                 <option value="org.openmrs.module.reporting.report.renderer.CsvReportRenderer">CSV</option>
                 <option value="org.openmrs.module.reporting.report.renderer.XmlReportRenderer">XML</option>
-                <option value="org.openmrs.module.reporting.report.renderer.XslReportRenderer">EXCL</option>
+                <option value="org.openmrs.module.reporting.report.renderer.XlsReportRenderer">EXCEL</option>
             </select>
         );
     };

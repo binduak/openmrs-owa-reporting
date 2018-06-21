@@ -52,8 +52,6 @@ const createReportRequest = (index, reportDefinitionUuid, startDate, endDate, fo
         dispatch({type: REPORT_REQUEST_PENDING});
         return createReportRequestCall(reportDefinitionUuid, startDate, endDate, format).then(data =>
             getReportRequestData(data, data.uuid, 0, index)(dispatch)
-            //     ).then(data =>
-            // dispatch({type: REPORT_REQUEST_SUCCESS, data:{data, index}})
         ).catch(data =>
             dispatch({type: REPORT_REQUEST_FAILED, data})
         );
@@ -65,8 +63,6 @@ const getReportRequestData = (data, reportRequestUuid, counter, index) => {
         dispatch({type: REPORT_REQUEST_DATA_PENDING});
         return getReportRequestCall(reportRequestUuid).then(data =>
                 ensureReportRequestCallIsCompleted(data, reportRequestUuid, index, counter, dispatch)
-        // ).then(data =>
-        // dispatch({type: REPORT_REQUEST_DATA_SUCCESS, data}))
         ).catch(data =>
             dispatch({type: REPORT_REQUEST_DATA_FAILED, data})
         );
@@ -77,7 +73,6 @@ const ensureReportRequestCallIsCompleted = (data, reportRequestUuid, index, coun
     if(data.status === "COMPLETED" || data.status === "SAVED" || data.status === "FAILED" ){
          dispatch({type: REPORT_REQUEST_SUCCESS, data:{data, index}});
        return dispatch({type: REPORT_REQUEST_DATA_SUCCESS, data:{data, index}});
-
     }
     if(counter > 15 ){
             return;
@@ -148,20 +143,22 @@ const getReportRequestCall = async (reportRequestUuid) => {
     return data;
 };
 
+const fileDownload = async (uuid) => {
+    const response = await fetch(`/openmrs/module/reporting/reports/viewReport.form?uuid=${uuid}`,{
+        method: 'GET',
+        credentials: 'include'
+    });
+    const blobData = await response.blob();
+    const headers = await response.headers;
+    const fileName = response.headers.get('content-disposition').split("=").pop();
+    fileDownload(blobData, fileName);
+};
+
 const downloadReport = (uuid) => {
-    return (dispatch) => {
-        fetch(`/openmrs/module/reporting/reports/viewReport.form?uuid=${uuid}`,
-            {
-                method: 'GET',
-                credentials: 'include'
-            }
-        ).then((response) => {
-            return response.blob();
-        }).then((blob) => {
-            fileDownload(blob, 'viewReport.zip');
-            dispatch({type: '', data: {}});
-        });
-        dispatch({type: '', data: {}});
+    return (dispatch) =>  {
+        fileDownload(uuid).then(
+            dispatch({type: '', data: {}})
+        );
     }
 };
 

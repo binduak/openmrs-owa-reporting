@@ -97,11 +97,13 @@ class ReportsPage extends Component {
     }
 
     onRunReport(report, index) {
+        this.onSelectChange(index, "enableDownloadButton", false);
+        this.onSelectChange(index, "reportRequestStatus", null);
         this.props.actions.createReportRequest(index, report.uuid, report.startDate, report.endDate, report.format);
     }
 
-    onSelectChange(report, columnName, value) {
-        this.props.actions.changeData(report, columnName, value);
+    onSelectChange(index, columnName, value) {
+        this.props.actions.changeData(index, columnName, value);
     }
 
     onDownloadReport(report, index) {
